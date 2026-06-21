@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+generated_decks/
+node_modules/
+.next/

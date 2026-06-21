@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Deck Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Agent pipeline">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div>
+            <p class="eyebrow">Multi AI</p>
+            <h1>Research Deck Studio</h1>
+          </div>
+        </div>
+
+        <div class="pipeline-card">
+          <div class="pipeline-header">
+            <span>Agent Workflow</span>
+            <strong id="pipelineState">Ready</strong>
+          </div>
+          <ol class="agent-list">
+            <li class="agent-step" data-agent="researcher">
+              <span class="agent-icon">R</span>
+              <div>
+                <strong>Researcher</strong>
+                <small>Finds credible sources and extracts evidence.</small>
+              </div>
+            </li>
+            <li class="agent-step" data-agent="analyst">
+              <span class="agent-icon">A</span>
+              <div>
+                <strong>Analyst</strong>
+                <small>Turns research into a structured slide story.</small>
+              </div>
+            </li>
+            <li class="agent-step" data-agent="designer">
+              <span class="agent-icon">D</span>
+              <div>
+                <strong>Designer</strong>
+                <small>Builds the PowerPoint deck with layouts.</small>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="stat-grid">
+          <div>
+            <span id="slideCount">0</span>
+            <small>slides drafted</small>
+          </div>
+          <div>
+            <span id="logCount">0</span>
+            <small>agent events</small>
+          </div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <section class="compose-panel" aria-labelledby="composeTitle">
+          <div class="compose-copy">
+            <p class="eyebrow">AI presentation command center</p>
+            <h2 id="composeTitle">Turn deep research into an executive-ready PPTX.</h2>
+          </div>
+
+          <form id="generateForm" class="generate-form">
+            <label for="topic">Research topic</label>
+            <textarea
+              id="topic"
+              name="topic"
+              minlength="3"
+              maxlength="300"
+              required
+              placeholder="Example: The rise of small modular nuclear reactors in emerging energy markets"
+            ></textarea>
+
+            <div class="controls-row">
+              <label class="range-control" for="maxSources">
+                <span>Sources</span>
+                <strong id="sourceValue">8</strong>
+                <input id="maxSources" name="maxSources" type="range" min="2" max="20" value="8" />
+              </label>
+
+              <label class="range-control" for="maxSlides">
+                <span>Slides</span>
+                <strong id="slideValue">12</strong>
+                <input id="maxSlides" name="maxSlides" type="range" min="3" max="25" value="12" />
+              </label>
+            </div>
+
+            <div class="action-row">
+              <button id="generateButton" class="primary-button" type="submit">
+                <span class="button-icon" aria-hidden="true">Go</span>
+                Generate deck
+              </button>
+              <a id="downloadButton" class="secondary-button is-hidden" href="#" download>
+                <span class="button-icon" aria-hidden="true">DL</span>
+                Download PPTX
+              </a>
+            </div>
+          </form>
+        </section>
+
+        <section class="results-grid" aria-label="Generated presentation results">
+          <div class="panel outline-panel">
+            <div class="panel-title">
+              <div>
+                <p class="eyebrow">Deck outline</p>
+                <h3>Slide storyboard</h3>
+              </div>
+              <span id="topicBadge">No deck yet</span>
+            </div>
+            <div id="outlineList" class="outline-list empty-state">
+              <div>
+                <strong>Your generated outline will appear here.</strong>
+                <p>Start a topic and the app will show each slide title, layout, bullets, metrics, and citations.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel activity-panel">
+            <div class="panel-title">
+              <div>
+                <p class="eyebrow">Live run</p>
+                <h3>Agent activity</h3>
+              </div>
+              <span id="healthBadge">Checking API</span>
+            </div>
+            <div id="logList" class="log-list">
+              <div class="log-line muted">
+                <span>system</span>
+                <p>Waiting for the backend at <code>http://localhost:8000</code>.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
