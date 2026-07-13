@@ -43,7 +43,7 @@ form.addEventListener("submit", async (event) => {
   addLog({ agent: "system", status: "started", message: "Submitted deck generation request." });
 
   try {
-    const response = await fetch(`${API_BASE}/generate`, {
+    const response = await fetch(`${API_BASE}/api/v1/generate`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -79,7 +79,7 @@ form.addEventListener("submit", async (event) => {
 
 async function checkHealth() {
   try {
-    const response = await fetch(`${API_BASE}/health`);
+    const response = await fetch(`${API_BASE}/api/v1/health`);
     const data = await response.json();
     if (!response.ok) throw new Error("unhealthy");
 
@@ -189,7 +189,7 @@ function prepareDownload(pptxPath) {
   const filename = pptxPath.split(/[\\/]/).pop();
   if (!filename) return;
 
-  downloadButton.href = `${API_BASE}/download/${encodeURIComponent(filename)}`;
+  downloadButton.href = `${API_BASE}/api/v1/download/${encodeURIComponent(filename)}`;
   downloadButton.classList.remove("is-hidden");
 }
 
