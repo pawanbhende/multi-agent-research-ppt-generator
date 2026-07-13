@@ -973,3 +973,20 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-06-21 19:47:52.800 | INFO     | app.services.pptx_engine:generate_presentation:71 - [PPTX Engine] Saved 12 slides to generated_decks\the-mental-health-impacts-of-doomscrolling-on-genz-dd8ec96b.pptx
 2026-06-21 19:47:52.802 | INFO     | app.agents.designer_agent:designer_node:31 - [Designer] Saved presentation to C:\Users\pawan\Downloads\research-ppt-agent\research-ppt-agent\backend\generated_decks\the-mental-health-impacts-of-doomscrolling-on-genz-dd8ec96b.pptx
 2026-06-21 19:50:11.752 | INFO     | app.main:lifespan:29 - Shutting down backend.
+2026-06-21 22:19:43.776 | INFO     | app.main:lifespan:26 - Starting Multi-Agent Research/PPTX backend [env=development]
+2026-06-21 22:19:55.336 | INFO     | app.main:lifespan:29 - Shutting down backend.
+2026-06-21 22:43:46.612 | INFO     | app.main:lifespan:26 - Starting Multi-Agent Research/PPTX backend [env=development]
+2026-06-21 22:55:18.537 | INFO     | app.core.llm_router:get_chat_model:82 - [LLM Router] role=researcher -> provider=groq model=llama-3.3-70b-versatile
+2026-06-21 22:56:01.640 | INFO     | app.agents.tools.search_tools:tavily_search:52 - [Tavily] 'artificial intelligence effects on critical thinking skills in higher education' -> 2 results
+2026-06-21 22:56:06.138 | INFO     | app.agents.tools.search_tools:tavily_search:52 - [Tavily] 'university students information evaluation strategies in the age of AI' -> 2 results
+2026-06-21 22:56:10.078 | INFO     | app.agents.tools.search_tools:tavily_search:52 - [Tavily] 'impact of AI driven tools on cognitive development in college students' -> 2 results
+2026-06-21 22:56:15.058 | INFO     | app.agents.tools.search_tools:tavily_search:52 - [Tavily] 'assessing the relationship between AI literacy and media literacy among undergraduates' -> 2 results
+2026-06-21 22:56:23.664 | WARNING  | app.agents.tools.scraper_tools:scrape_url:41 - [Scraper] Failed to scrape https://www.globalscientificjournal.com/researchpaper/Redefining_Student_Assessments_in_the_Age_of_AI_Assisted_Learning_Strategies_for_Educators.pdf: Client error '403 Forbidden' for url 'https://www.globalscientificjournal.com/researchpaper/Redefining_Student_Assessments_in_the_Age_of_AI_Assisted_Learning_Strategies_for_Educators.pdf'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-21 22:56:31.121 | INFO     | app.agents.researcher_agent:researcher_node:78 - [Researcher] Completed with 6 sources
+2026-06-21 22:56:31.125 | INFO     | app.core.llm_router:get_chat_model:82 - [LLM Router] role=analyst -> provider=groq model=llama-3.3-70b-versatile
+2026-06-21 22:56:36.388 | INFO     | app.agents.analyst_agent:analyst_node:86 - [Analyst] Produced 8 slides
+2026-06-21 22:56:36.585 | INFO     | app.services.pptx_engine:generate_presentation:71 - [PPTX Engine] Saved 8 slides to generated_decks\the-impact-of-artificial-intelligence-on-critical--b3e2d0d0.pptx
+2026-06-21 22:56:36.588 | INFO     | app.agents.designer_agent:designer_node:31 - [Designer] Saved presentation to C:\Users\pawan\OneDrive\Pictures\Desktop\Project\research-ppt-agent\backend\generated_decks\the-impact-of-artificial-intelligence-on-critical--b3e2d0d0.pptx
+2026-06-21 22:57:52.777 | INFO     | app.main:lifespan:29 - Shutting down backend.
+2026-06-21 22:58:01.776 | INFO     | app.main:lifespan:26 - Starting Multi-Agent Research/PPTX backend [env=development]

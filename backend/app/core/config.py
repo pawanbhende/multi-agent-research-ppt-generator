@@ -51,7 +51,7 @@ class Settings(BaseSettings):
     # --- Pipeline limits ---
     max_research_sources: int = 8
     max_slides: int = 12
-    output_dir: str = "./generated_decks"
+    output_dir: str = "/tmp/generated_decks"
 
     @property
     def cors_origin_list(self) -> List[str]:
